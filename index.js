@@ -9,13 +9,10 @@ const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 connectDB();
 
-const corsOptions = {
-  origin: 'https://keeptrack-notes.vercel.app',
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); 
+app.use(cors({
+    origin: 'https://keeptrack-notes.vercel.app',
+    credentials: true
+}));
 
 app.use(express.json());
 
