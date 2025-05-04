@@ -15,5 +15,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 
-const PORT = process.env.PORT || 5000;
+app.get("/", (req, res) => {
+    res.send("Welcome to the API!")
+});
+
 module.exports = app;
