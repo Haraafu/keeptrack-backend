@@ -10,7 +10,7 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: 'https://keeptrack-notes.vercel.app/',
+  origin: 'https://keeptrack-notes.vercel.app',
   credentials: true
 }));
 
