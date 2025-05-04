@@ -9,14 +9,18 @@ const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://keeptrack-notes.vercel.app/',
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 
-app.get("/", (req, res) => {
-    res.send("Welcome to the API!")
+app.get('/', (req, res) => {
+  res.send('Welcome to the API!');
 });
 
 module.exports = app;
